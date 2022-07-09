@@ -1,0 +1,284 @@
+/* Copyright 2022 21base */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e0d79c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+h1 {
+    color: #39395f;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hangman {
+    background: #f3f3f3;
+    width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+p {
+    color: #777;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gameCenter {
+    display: flex;
+    align-items: center;
+}
+
+.hangingMan {
+    width: 300px;
+    position: relative;  
+    padding-bottom: 10px;
+} 
+
+.guessContainer {
+    width: 300px;
+    padding: 15px;
+}
+
+.guessWord, .missedGuess {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.guessWord p, .missedGuess p {
+    margin-bottom: 0;
+    margin-right: 10px;
+    color: #39395f;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hint p {
+    background: #39395f;
+    color: #e0d79c;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+span {
+    text-transform: capitalize;
+    font-weight: lighter;
+}
+
+.guessWord span:not(:last-child) {
+    margin-right: 10px;
+}
+    
+.diagram {
+    width: 200px;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hangingStickDash, .hangingStickLine, .body, .handOne, .legOne, .handTwo, .legTwo, .poleHold, .poleHoldBottom{
+    position: absolute;
+    background: #39395f;
+}
+
+.hangingStick {
+    width: 5px;
+    height: 100px;
+    background: #39395f;
+}
+
+.hangingStickDash {
+    top: 20px;
+    width: 50px;
+    height: 4px;
+}
+
+.hangingStickLine {
+    top: 20px;
+    left: 70px;
+    width: 5px;
+    height: 15px;
+}
+
+.poleHold {
+    width: 4px;
+    height: 25px;
+    transform: rotate(45deg);
+    top: 18px;
+    left: 28px;
+}
+
+.poleHoldBottom {
+    width: 50px;
+    height: 5px;
+    left: 0;
+}
+
+.head {
+    position: absolute;
+    left: 63px;
+    top: 35px;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #39395f;
+    border-radius: 50%;
+    display: none;
+}
+
+.body {
+    left: 70px;
+    top: 55px;
+    width: 4px;
+    height: 40px;
+    display: none;
+}
+
+.handOne, .legOne {
+    left: 63px;
+    top: 60px;
+    width: 4px;
+    height: 20px;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.handTwo, .legTwo {
+    left: 78px;
+    top: 60px;
+    width: 4px;
+    height: 20px;
+    transform: rotate(-45deg);
+    display: none;
+}
+
+.legOne, .legTwo {
+    top: 88px;
+} 
+
+.keys {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background: #39395f;
+    height: 160px;
+    border-radius: 4px;
+}
+
+.keys button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #e0d79c;
+    color: #39395f;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button.notActive {
+    opacity: 0.6;
+}
+
+.wordGuessed, .youKilledHim {
+    width: 450px;
+    border-radius: 4px;
+    background: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+}
+
+.wordGuessed {
+    display: none;
+    transition: 0.3s ease-out;
+}
+
+.wordGuessed img {
+    width: 30px;
+} 
+
+.wordGuessed p {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.wordGuessed p span {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #39395f;
+    line-height: 2;
+}
+
+.playAgain {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background: #39395f;
+    color: #e0d79c;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.youKilledHim {
+    display: none;
+    transition: 0.3s ease-out;
+}
+
+.youKilledHim img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.youKilledHim p {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #777
+}
+
+.youKilledHim p span {
+    color: #39395f;
+    font-weight: 600;
+}
+
+.emojiFaces {
+    position: absolute;
+    right: 200px;
+    top: 148px;
+    transition: all 0.3s ease-out;
+}
+
+.emojiFaces img {
+    width: 100px;
+}
+
+.eyebrow, .happyFace, .sadFace {
+    display: none;
+}

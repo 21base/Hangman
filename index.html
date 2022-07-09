@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Hangman</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hangman">
+            <h1>Hangman</h1>
+            <p>Guess the word before the diagram is complete</p>
+            <div class="gameCenter">
+                <div class="hangingMan">
+                    <div class="diagram">
+                        <div class="hangingStick"></div>
+                        <div class="hangingStickDash"></div>
+                        <div class="hangingStickLine"></div>
+                        <div class="poleHold"></div>
+                        <div class="poleHoldBottom"></div>
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="handOne"></div>
+                        <div class="handTwo"></div>
+                        <div class="legOne"></div>
+                        <div class="legTwo"></div>
+                    </div>
+                    
+                </div>
+                <div class="guessContainer">
+                    <div class="guessWord">
+                        <p>Word: </p>
+                        <div></div>
+                    </div>
+                    <div class="missedGuess">
+                        <p>Wrong Guess: </p>
+                        <span></span>
+                    </div>
+                    <div class="hint">
+                        <p>Hint: <span>The word is a footballer name</span></p>
+                    </div>
+                    <div class="remainGuess">
+                        <p>Your Guess Remain <span>6</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="keys">
+                <button id="A">A</button>
+                <button id="B">B</button>
+                <button id="C">C</button>
+                <button id="D">D</button>
+                <button id="E">E</button>
+                <button id="F">F</button>
+                <button id="G">G</button>
+                <button id="H">H</button>
+                <button id="I">I</button>
+                <button id="J">J</button>
+                <button id="K">K</button>
+                <button id="L">L</button>
+                <button id="M">M</button>
+                <button id="N">N</button>
+                <button id="O">O</button>
+                <button id="P">P</button>
+                <button id="Q">Q</button>
+                <button id="R">R</button>
+                <button id="S">S</button>
+                <button id="T">T</button>
+                <button id="U">U</button>
+                <button id="V">V</button>
+                <button id="W">W</button>
+                <button id="X">X</button>
+                <button id="Y">Y</button>
+                <button id="Z">Z</button>
+            </div>
+        </div>
+        <div class="wordGuessed">
+            <div class="happyImg">
+                <img src="img/toppng.com-jumping-happy-man-silhouette-253x600.png" alt="happyMan">
+            </div>
+            <p>you save the dying man by guessing the word <span></span></p>
+            <button class="playAgain">Play Again</button>
+        </div>
+        <div class="youKilledHim">
+            <div class="manDown">
+                <img src="img/criminal-death-death-sentence-execution-hanging-man-penalty-icon-693053.png" alt="manDown">
+            </div>
+            <p><span>Oops!</span> You killed him</p>
+            <button class="playAgain">Play Again</button>
+        </div>
+        <div class="emojiFaces">
+            <img class="happyFace" src="img/PngItem_85242.png" alt="happyFace">
+            <img class="eyebrow" src="img/PngItem_38161.png" alt="eyebrow">
+            <img class="sadFace" src="img/PngItem_5103262.png" alt="sadFace">
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- Copyright 2022 21base  -->
